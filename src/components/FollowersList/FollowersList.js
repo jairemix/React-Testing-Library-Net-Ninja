@@ -6,18 +6,26 @@ import { Link } from 'react-router-dom';
 export default function FollowersList() {
 
     const [followers, setFollowers] = useState([]);
+    const [fetchFollowersError, setFetchFollowersError] = useState(null);
 
     useEffect(() => {
         fetchFollowers()
     }, []);
 
     const fetchFollowers = async () => {
-        const {data} = await axios.get("https://randomuser.me/api/?results=5");
-        setFollowers(data.results);
+        try {
+            const {data} = await axios.get("https://randomuser.me/api/?results=5");
+            setFollowers(data.results);
+            setFetchFollowersError(null);
+        } catch (e) {
+            // console.log('e.response', JSON.stringify(e.response));
+            setFetchFollowersError(e.response || {});
+        }
     }
 
     return (
         <div className="followerslist-container">
+            {fetchFollowersError ? <p>There was an error fetching followers. Please try again later.</p> : null}
             <div>
                 {followers.map((follower, index) => (
                     <div className="follower-item" key={follower.login.username} data-testid={`follower-item-${index}`}>

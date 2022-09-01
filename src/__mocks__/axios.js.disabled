@@ -1,5 +1,7 @@
+import mockAxios from "jest-mock-axios";
+
 /*
- * This global mock mocks the 'axios' module manually.
+ * This global mock mocks the 'axios' module using 'jest-mock-axios'
  *
  * This will need (in package.json):
  *
@@ -8,76 +10,4 @@
  * }
  *
  */
-
-const mockResponse = {
-    data: {
-        results: [
-            {
-                name: {
-                    first: 'Jeremy',
-                    last: 'Aurelius',
-                },
-                picture: {
-                    large: 'https://randomuser.me/api/portraits/men/97.jpg',
-                },
-                login: {
-                    username: 'jeremyaurelius',
-                },
-            },
-            {
-                name: {
-                    first: 'Bastian',
-                    last: 'Hallix',
-                },
-                picture: {
-                    large: 'https://randomuser.me/api/portraits/men/97.jpg',
-                },
-                login: {
-                    username: 'bastianhallix',
-                },
-            },
-            {
-                name: {
-                    first: 'Lyris',
-                    last: 'Titanborn',
-                },
-                picture: {
-                    large: 'https://randomuser.me/api/portraits/women/97.jpg',
-                },
-                login: {
-                    username: 'lyristitanborn',
-                },
-            },
-            {
-                name: {
-                    first: 'Falk',
-                    last: 'Firebeard',
-                },
-                picture: {
-                    large: 'https://randomuser.me/api/portraits/men/97.jpg',
-                },
-                login: {
-                    username: 'falkfirebeard',
-                },
-            },
-            {
-                name: {
-                    first: 'Elisif',
-                    last: 'the Fair',
-                },
-                picture: {
-                    large: 'https://randomuser.me/api/portraits/women/97.jpg',
-                },
-                login: {
-                    username: 'elisifthefair',
-                },
-            },
-        ],
-    }
-}
-
-const mock = {
-  get: jest.fn().mockResolvedValue(mockResponse),
-}
-
-export default mock;
+export default mockAxios;
