@@ -12,6 +12,23 @@ const MockFollowersList = () => {
 
 describe('FollowersList', () => {
 
+    // beforeAll(() => {
+    //     console.log('before all');
+    // });
+
+    // hook that is run at the beginning of each test in the describe block
+    // beforeEach(() => {
+    //     console.log('before each test');
+    // });
+
+    // afterAll(() => {
+    //     console.log('after all');
+    // });
+
+    // afterEach(() => {
+    //     console.log('after each test');
+    // });
+
     it('should render follower item', async () => {
         render(<MockFollowersList />);
         const followerDivElement = await screen.findByTestId('follower-item-0');
