@@ -10,8 +10,6 @@ const MockFollowersList = () => {
     );
 };
 
-// integration tests
-
 describe('FollowersList', () => {
 
     it('should render follower item', async () => {
