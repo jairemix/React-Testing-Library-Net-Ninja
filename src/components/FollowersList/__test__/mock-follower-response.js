@@ -1,15 +1,4 @@
-/*
- * This global mock mocks the 'axios' module manually.
- *
- * This will need (in package.json):
- *
- * "jest": {
- *   "resetMocks": false
- * }
- *
- */
-
-const mockResponse = {
+export const mockFollowerResponse = {
     data: {
         results: [
             {
@@ -73,11 +62,5 @@ const mockResponse = {
                 },
             },
         ],
-    }
-}
-
-const mock = {
-  get: jest.fn().mockResolvedValue(mockResponse),
-}
-
-export default mock;
+    },
+};
